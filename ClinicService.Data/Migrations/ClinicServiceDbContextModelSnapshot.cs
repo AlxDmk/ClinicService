@@ -117,7 +117,7 @@ namespace ClinicService.Data.Migrations
                     b.HasOne("ClinicService.Data.Models.Pet", "Pet")
                         .WithMany("Consultations")
                         .HasForeignKey("PetId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Client");

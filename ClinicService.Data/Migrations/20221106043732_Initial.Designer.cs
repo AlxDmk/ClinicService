@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClinicService.Data.Migrations
 {
     [DbContext(typeof(ClinicServiceDbContext))]
-    [Migration("20221102194147_initial")]
-    partial class initial
+    [Migration("20221106043732_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -119,7 +119,7 @@ namespace ClinicService.Data.Migrations
                     b.HasOne("ClinicService.Data.Models.Pet", "Pet")
                         .WithMany("Consultations")
                         .HasForeignKey("PetId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Client");
